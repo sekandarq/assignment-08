@@ -36,3 +36,7 @@ margin-bottom: 70px;
 color: #000000;
 
 }
+
+.blog-image-list {
+    object-fit: cover;
+}
