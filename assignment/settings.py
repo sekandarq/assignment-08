@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-*_e-(@)qe683--zsg5-8u08=$_j59_mr_u%w565$3jy5u&2dlw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'iskandar02.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'iskandar02.pythonanywhere.com', '10.0.2.2', '10.0.2.16']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'assignment.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
